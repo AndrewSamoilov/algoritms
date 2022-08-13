@@ -12,9 +12,11 @@ public class Main {
         List<Point> points = inputPoints();
         int size = points.size();
 
+        int c = 0;
         for (int i = 0; i < size; i++) {
             for (int j = i; j < size; j++) {
                 for (int k = j; k < size; k++) {
+                    c++;
                     try {
                         Triangle triangle = new Triangle(points.get(i), points.get(j), points.get(k));
                         triangles.add(triangle);
@@ -23,6 +25,7 @@ public class Main {
                 }
             }
         }
+        System.out.println(c +" count");
         Collections.sort(triangles);
         System.out.println(triangles.get(0).perimeter());
     }

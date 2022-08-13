@@ -1,7 +1,10 @@
 package com.projector.algoritms.triangle;
 
+import lombok.Data;
+
 import java.util.Arrays;
 
+@Data
 public class Triangle implements Comparable<Triangle>{
     private Point a;
     private Point b;
@@ -14,28 +17,6 @@ public class Triangle implements Comparable<Triangle>{
         this.a = a;
         this.b = b;
         this.c = c;
-    }
-
-    public Point getA() {
-        return a;
-    }
-
-    public Point getB() {
-        return b;
-    }
-
-    public Point getC() {
-        return c;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Triangle{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                '}';
     }
 
     public double perimeter() {
