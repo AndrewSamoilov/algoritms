@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List<Triangle> triangles = new ArrayList<>();
-
         List<Point> points = inputPoints();
         int size = points.size();
 
@@ -17,7 +15,6 @@ public class Main {
                 for (int k = j; k < size; k++) {
                     try {
                         Triangle triangle = new Triangle(points.get(i), points.get(j), points.get(k));
-                        triangles.add(triangle);
                         if (maxPerimeter < triangle.perimeter())
                             maxPerimeter = triangle.perimeter();
                     } catch (IllegalArgumentException ignored) {
