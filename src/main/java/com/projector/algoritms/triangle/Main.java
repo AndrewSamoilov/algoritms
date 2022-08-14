@@ -19,13 +19,13 @@ public class Main {
                         Triangle triangle = new Triangle(points.get(i), points.get(j), points.get(k));
                         triangles.add(triangle);
                         if (maxPerimeter < triangle.perimeter())
-                            maxPerimeter =triangle.perimeter();
-                    } catch (IllegalArgumentException ignored){
+                            maxPerimeter = triangle.perimeter();
+                    } catch (IllegalArgumentException ignored) {
                     }
                 }
             }
         }
-        System.out.println(triangles.get(0).perimeter());
+        System.out.println(maxPerimeter);
     }
 
 
