@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Arrays;
 
 @Data
-public class Triangle implements Comparable<Triangle>{
+public class Triangle {
     private Point a;
     private Point b;
     private Point c;
@@ -30,10 +30,5 @@ public class Triangle implements Comparable<Triangle>{
         double maxDistance = Arrays.stream(new double[]{ab, bc, ca}).max().getAsDouble();
         double r = ab + bc + ca - maxDistance;
         return r > maxDistance;
-    }
-
-    @Override
-    public int compareTo(Triangle o) {
-        return Double.compare(o.perimeter(), this.perimeter());
     }
 }

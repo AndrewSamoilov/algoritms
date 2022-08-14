@@ -1,7 +1,6 @@
 package com.projector.algoritms.triangle;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,18 +11,20 @@ public class Main {
         List<Point> points = inputPoints();
         int size = points.size();
 
+        double maxPerimeter = 0;
         for (int i = 0; i < size; i++) {
             for (int j = i; j < size; j++) {
                 for (int k = j; k < size; k++) {
                     try {
                         Triangle triangle = new Triangle(points.get(i), points.get(j), points.get(k));
                         triangles.add(triangle);
+                        if (maxPerimeter < triangle.perimeter())
+                            maxPerimeter =triangle.perimeter();
                     } catch (IllegalArgumentException ignored){
                     }
                 }
             }
         }
-        Collections.sort(triangles);
         System.out.println(triangles.get(0).perimeter());
     }
 
