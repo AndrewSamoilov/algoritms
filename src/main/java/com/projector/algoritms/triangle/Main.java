@@ -11,8 +11,8 @@ public class Main {
 
         double maxPerimeter = 0;
         for (int i = 0; i < size; i++) {
-            for (int j = i; j < size; j++) {
-                for (int k = j; k < size; k++) {
+            for (int j = i + 1 ; j < size; j++) {
+                for (int k = j + 1; k < size; k++) {
                     try {
                         Triangle triangle = new Triangle(points.get(i), points.get(j), points.get(k));
                         if (maxPerimeter < triangle.perimeter())
@@ -28,11 +28,9 @@ public class Main {
 
     public static List<Point> inputPoints() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Input count of points: ");
         int pointCount = sc.nextInt();
 
         List<Point> points = new ArrayList<>();
-        System.out.println("x y");
         for (int i = 0; i < pointCount; i++) {
             Scanner ss = new Scanner(System.in);
             String s = ss.nextLine();
