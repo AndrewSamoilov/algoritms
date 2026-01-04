@@ -1,4 +1,4 @@
-package com.projector.algoritms.triangle;
+package com.andrew.smv.broot_force.triangle;
 
 import java.util.Arrays;
 
