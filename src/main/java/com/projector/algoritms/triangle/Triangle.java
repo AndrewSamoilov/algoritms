@@ -1,10 +1,7 @@
 package com.projector.algoritms.triangle;
 
-import lombok.Data;
-
 import java.util.Arrays;
 
-@Data
 public class Triangle {
     private Point a;
     private Point b;
