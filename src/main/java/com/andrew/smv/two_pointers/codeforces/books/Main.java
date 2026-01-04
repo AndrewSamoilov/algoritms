@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static java.lang.Math.max;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class Main {
                 timePerBookArray[i] = Integer.parseInt(secondLine[i]);
             }
 
-            int count = solution.contBooks(timePerBookArray, freeTime);
+            int count = solution.countBooksWithWhile(timePerBookArray, freeTime);
 
             System.out.println(count);
 
@@ -42,7 +44,7 @@ public class Main {
     public static class Solution {
 
 
-        public int contBooks(int[] requiredTimes, int freeTime) {
+        public int countBooks(int[] requiredTimes, int freeTime) {
 
             int leftPointer = 0;
             int sum = 0;
@@ -57,6 +59,27 @@ public class Main {
                 }
             }
             return i - leftPointer;
+        }
+
+
+        public int countBooksWithWhile(int[] requiredTimes, int freeTime) {
+
+            int leftPointer = 0;
+            int res = 0;
+            int sum = 0;
+            for (int i = 0; i < requiredTimes.length; i++) {
+
+                sum += requiredTimes[i];
+
+                while (sum > freeTime) {
+                    sum -= requiredTimes[leftPointer];
+                    leftPointer++;
+                }
+
+                int a = i - leftPointer + 1;
+                res = max(a, res);
+            }
+            return res;
         }
 
 
