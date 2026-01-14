@@ -6,6 +6,8 @@ public class Main {
 
         Solution solution = new Solution();
 
-        System.out.println(solution.minSubArrayLen(11, new int[]{1,1,1,1,1,1,1,1}));
+        System.out.println(solution.minSubArrayLen(7, new int[]{1,2,4,3}));
+        System.out.println(solution.minSubArrayLenB(7, new int[]{1,2,4,3}));
+
     }
 }
